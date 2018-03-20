@@ -1,5 +1,9 @@
 package com.cowbell.cordova.geofence;
 
+/**
+ * Created by mgbelluco on 12/03/18.
+ */
+
 import android.content.Context;
 
 import java.util.ArrayList;
@@ -38,3 +42,4 @@ public class GeoNotificationStore {
         storage.clear();
     }
 }
+

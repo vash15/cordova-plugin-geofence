@@ -1,5 +1,10 @@
 # ChangeLog
 
+## Versin 1.0.0 - 20.03.2018
+
+- Re-write Android version for new Google Api Oreo.
+- Bugfix iOS [Pull 252](https://github.com/compelling/cordova-plugin-geofence)
+
 ## Version 0.7.0 - 14.05.2017
 
 - Adding/removing geofences now throw errors correctly

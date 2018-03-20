@@ -1,8 +1,12 @@
 package com.cowbell.cordova.geofence;
-
 import com.google.gson.GsonBuilder;
 
+/**
+ * Created by mgbelluco on 07/03/18.
+ */
+
 public class Gson {
+
     private static final com.google.gson.Gson gson;
 
     static {
@@ -12,4 +16,5 @@ public class Gson {
     public static com.google.gson.Gson get() {
         return gson;
     }
+
 }

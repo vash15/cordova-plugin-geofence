@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-geofence",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "description": "Cordova geofence plugin",
   "cordova": {
     "id": "cordova-plugin-geofence",
@@ -47,7 +47,7 @@
   ],
   "typings": "./typings/cordova-plugin-geofence.d.ts",
   "devDependencies": {
-    "cordova": "^6.1.1",
+    "cordova": "^8.0.0",
     "cordova-paramedic": "https://github.com/apache/cordova-paramedic"
   }
 }

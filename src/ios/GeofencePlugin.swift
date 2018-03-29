@@ -25,7 +25,7 @@ func log(_ messages: [String]) {
 
 @available(iOS 8.0, *)
 @objc(HWPGeofencePlugin) class GeofencePlugin : CDVPlugin {
-    lazy var geoNotificationManager = GeoNotificationManager()
+    lazy var geoNotificationManager = GeoNotificationManager.sharedInstance
     let priority = DispatchQueue.GlobalQueuePriority.default
 
     override func pluginInitialize () {
@@ -52,7 +52,7 @@ func log(_ messages: [String]) {
             promptForNotificationPermission()
         }
 
-        geoNotificationManager = GeoNotificationManager()
+        geoNotificationManager = GeoNotificationManager.sharedInstance
         geoNotificationManager.registerPermissions()
 
         let (ok, warnings, errors) = geoNotificationManager.checkRequirements()
@@ -223,14 +223,21 @@ class GeofenceFaker {
 
 @available(iOS 8.0, *)
 class GeoNotificationManager : NSObject, CLLocationManagerDelegate {
+
     let locationManager = CLLocationManager()
     let store = GeoNotificationStore()
+
+    static let sharedInstance : GeoNotificationManager = {
+        let instance = GeoNotificationManager()
+        return instance
+    }()
 
     override init() {
         log("GeoNotificationManager init")
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.allowsBackgroundLocationUpdates = true
     }
 
     func registerPermissions() {
